@@ -1,6 +1,8 @@
 # wireguard-to-mikrotik
 
-Converts Wireguard conf to Mikrotik command line instructions
+Converts Wireguard conf to Mikrotik command line instructions.
+
+Tested on Mikrotik Router OS 7.18.2
 
 ## Features
 
