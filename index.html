@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!-- saved from url=(0036)https://ipam.ampr.ari.it/wgtomt.html -->
+<html class=" kesnqneji idc0_350">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<style type="text/css">
+		* {
+			padding: 0;
+			margin: 0;
+		}
+
+		svg {
+			border: 1px #eee solid;
+		}
+	</style>
+	<script src="./converter.js"></script>
+</head>
+
+<body>
+	<div align="center">
+		<h1>Convertitore WireGuard in Tunnel MT</h1>
+		<p>Questo strumento converte la configurazione di un tunnel WireGuard in un comando terminale per r router
+			Mikrotik.</p>
+		<p>Per utilizzare questo strumento, inserisci la configurazione del tunnel WireGuard in formato INI nel campo
+			sottostante e premi il pulsante "Traduci".</p>
+		<p>Il comando risultante verrà visualizzato nella parte inferiore della pagina.</p>
+		<p>Puoi anche generare un codice QR per il comando risultante, che può essere scansionato con un dispositivo
+			mobile per configurare il tunnel WireGuard.</p>
+		<br>
+		<p>Nessun contenuto viene inviato o memorizzato nel server o nel browser, tutta la conversione viene fatta in
+			locale e eliminata al primo refresh</p>
+		<br>
+		<h3>Inserisci qui la configurazione del tunnel WireGuard in formato INI</h3>
+		<textarea id="inicfg" rows="14" cols="80"></textarea><br>
+		<button onclick="wgtomt()">Traduci</button>
+	</div>
+	<div>
+		<pre><code id="mtcmd"></code></pre>
+	</div>
+	<div align="center" id="outputQR"></div>
+
+</body>
+
+</html>
