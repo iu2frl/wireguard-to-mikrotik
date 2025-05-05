@@ -102,7 +102,7 @@ function wgtomt() {
 
     const iniData = parseINIString(document.getElementById("inicfg").value);
     console.log(iniData);
-    var interfaceName = "wg_tunnel" + Math.floor(Math.random() * 1000);
+    var interfaceName = "wg_tunnel_" + Math.floor(Math.random() * 1000);
     document.getElementById("mtcmd").innerHTML = "/interface/wireguard/add name=\"" + interfaceName + "\"" +
         (iniData.Interface.ListenPort ? " listen-port=" + iniData.Interface.ListenPort : "") +
         " private-key=\"" + iniData.Interface.PrivateKey + "\"\n" +
