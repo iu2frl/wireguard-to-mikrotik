@@ -112,8 +112,8 @@ function wgtomt() {
         " endpoint-port=\"" + iniData.Peer.Endpoint.substring(iniData.Peer.Endpoint.indexOf(':') + 1) + "\"" +
         " public-key=\"" + iniData.Peer.PublicKey + "\"" +
         " preshared-key=\"" + iniData.Peer.PresharedKey + "\"" +
-        " persistent-keepalive=" + (iniData.Peer.PersistentKeepalive ? iniData.Peer.PersistentKeepalive : "25s") +
-        " client-keepalive=" + (iniData.Peer.ClientKeepalive ? iniData.Peer.ClientKeepalive : "25s") +
+        " persistent-keepalive=" + (iniData.Peer.PersistentKeepalive ? (iniData.Peer.PersistentKeepalive + "s") : "25s") +
+        " client-keepalive=" + (iniData.Peer.ClientKeepalive ? (iniData.Peer.ClientKeepalive + "s") : "25s") +
         " allowed-address=\"" + (iniData.Peer.AllowedIPs ? iniData.Peer.AllowedIPs : "0.0.0.0/0") + "\"\n\n";
 
     'use strict';
