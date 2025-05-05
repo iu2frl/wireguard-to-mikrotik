@@ -102,11 +102,12 @@ function wgtomt() {
 
     const iniData = parseINIString(document.getElementById("inicfg").value);
     console.log(iniData);
-    document.getElementById("mtcmd").innerHTML = "/interface/wireguard/add name=\"wg_tunnel\"" +
+    var interfaceName = "wg_tunnel" + Math.floor(Math.random() * 1000);
+    document.getElementById("mtcmd").innerHTML = "/interface/wireguard/add name=\"" + interfaceName + "\"" +
         (iniData.Interface.ListenPort ? " listen-port=" + iniData.Interface.ListenPort : "") +
         " private-key=\"" + iniData.Interface.PrivateKey + "\"\n" +
-        "/ip/address/add address=\"" + iniData.Interface.Address + "\" interface=\"wg_tunnel\"\n" +
-        "/interface/wireguard/peers/add interface=\"wg_tunnel\"" +
+        "/ip/address/add address=\"" + iniData.Interface.Address + "\" interface=\"" + interfaceName + "\"\n" +
+        "/interface/wireguard/peers/add interface=\"" + interfaceName + "\"" +
         " endpoint-address=\"" + iniData.Peer.Endpoint.substring(0, iniData.Peer.Endpoint.indexOf(':')) + "\"" +
         " endpoint-port=\"" + iniData.Peer.Endpoint.substring(iniData.Peer.Endpoint.indexOf(':') + 1) + "\"" +
         " public-key=\"" + iniData.Peer.PublicKey + "\"" +

@@ -3,44 +3,95 @@
 <html class=" kesnqneji idc0_350">
 
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WireGuard to Mikrotik Converter</title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
 
-	<style type="text/css">
-		* {
-			padding: 0;
-			margin: 0;
-		}
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            color: #333;
+            padding: 20px;
+        }
 
-		svg {
-			border: 1px #eee solid;
-		}
-	</style>
-	<script src="./converter.js"></script>
+        h1 {
+            color: #0056b3;
+        }
+
+        div {
+            margin: 20px auto;
+            max-width: 800px;
+            text-align: center;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 14px;
+        }
+
+        button {
+            background-color: #0056b3;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #004494;
+        }
+
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            overflow-x: auto;
+            text-align: left;
+        }
+
+        #outputQR {
+            margin-top: 20px;
+        }
+    </style>
+    <script src="./converter.js"></script>
 </head>
 
 <body>
-	<div align="center">
-		<h1>Convertitore WireGuard in Tunnel MT</h1>
-		<p>Questo strumento converte la configurazione di un tunnel WireGuard in un comando terminale per r router
-			Mikrotik.</p>
-		<p>Per utilizzare questo strumento, inserisci la configurazione del tunnel WireGuard in formato INI nel campo
-			sottostante e premi il pulsante "Traduci".</p>
-		<p>Il comando risultante verrà visualizzato nella parte inferiore della pagina.</p>
-		<p>Puoi anche generare un codice QR per il comando risultante, che può essere scansionato con un dispositivo
-			mobile per configurare il tunnel WireGuard.</p>
-		<br>
-		<p>Nessun contenuto viene inviato o memorizzato nel server o nel browser, tutta la conversione viene fatta in
-			locale e eliminata al primo refresh</p>
-		<br>
-		<h3>Inserisci qui la configurazione del tunnel WireGuard in formato INI</h3>
-		<textarea id="inicfg" rows="14" cols="80"></textarea><br>
-		<button onclick="wgtomt()">Traduci</button>
-	</div>
-	<div>
-		<pre><code id="mtcmd"></code></pre>
-	</div>
-	<div align="center" id="outputQR"></div>
-
+    <div>
+        <h1>WireGuard to Mikrotik Converter</h1>
+        <p>This tool converts a WireGuard tunnel configuration into a terminal command for Mikrotik routers.</p>
+        <p>To use this tool, paste the WireGuard tunnel configuration in INI format into the field below and press the "Translate" button.</p>
+        <p>The resulting command will be displayed at the bottom of the page.</p>
+        <p>You can also generate a QR code for the resulting command, which can be scanned with a mobile device to configure the WireGuard tunnel.</p>
+        <br>
+        <p><strong>Note:</strong> No content is sent or stored on the server or browser. All conversion is done locally and cleared upon page refresh.</p>
+        <br>
+        <h3>Paste the WireGuard tunnel configuration in INI format here</h3>
+        <textarea id="inicfg" rows="14" cols="80"></textarea><br>
+        <button onclick="wgtomt()">Translate</button>
+    </div>
+    <div>
+        <pre><code id="mtcmd"></code></pre>
+    </div>
+    <div align="center" id="outputQR"></div>
 </body>
 
 </html>
